@@ -1,0 +1,1 @@
+"use strict";exports.id=694,exports.ids=[694],exports.modules={9694:(_,e,s)=>{s.r(e),s.d(e,{default:()=>__WEBPACK_DEFAULT_EXPORT__});var t=s(4656);let __WEBPACK_DEFAULT_EXPORT__=()=>t.jsx("footer",{className:"bottom-0",children:"I'm OK"})}};

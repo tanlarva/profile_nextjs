@@ -1,0 +1,1 @@
+"use strict";exports.id=550,exports.ids=[550],exports.modules={2550:(e,r,t)=>{t.r(r),t.d(r,{$$typeof:()=>l,__esModule:()=>a,default:()=>p});var o=t(5153);let s=(0,o.createProxy)(String.raw`C:\laragon\www\profile\src\components\larva.tsx`),{__esModule:a,$$typeof:l}=s,d=s.default,p=d}};

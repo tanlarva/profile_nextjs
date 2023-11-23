@@ -1,5 +1,5 @@
 {
-  "name": "profile",
+  "name": "profile-larva",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,45 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@motionone/utils": "^10.16.3",
+    "@nextui-org/react": "^2.2.9",
+    "@react-spring/three": "^9.7.3",
+    "@react-three/drei": "^9.88.17",
+    "@react-three/fiber": "^8.15.11",
+    "@splinetool/loader": "^0.9.497",
+    "@splinetool/r3f-spline": "^1.0.2",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.497",
+    "framer-motion": "^10.16.4",
+    "framer-motion-3d": "^10.16.5",
+    "next": "14.0.1",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
     "react-dom": "^18",
-    "next": "14.0.1"
+    "react-use-downloader": "^1.2.4",
+    "three": "^0.158.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.158.2",
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.0.1"
-  }
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "prettier": "^3.0.0-alpha.6",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-dotted-background": "^1.1.0",
+    "typescript": "^5"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "Tan Larva",
+  "license": "LARVA"
 }
