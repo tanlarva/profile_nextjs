@@ -1,1 +1,0 @@
-"use strict";exports.id=313,exports.ids=[313],exports.modules={5313:(e,r,t)=>{t.r(r),t.d(r,{$$typeof:()=>d,__esModule:()=>a,default:()=>p});var o=t(5153);let s=(0,o.createProxy)(String.raw`C:\laragon\www\profile\src\components\navbar.tsx`),{__esModule:a,$$typeof:d}=s,l=s.default,p=l}};
