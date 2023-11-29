@@ -1,14 +1,14 @@
 'use client'
 
-
 import { useEffect, useState } from 'react';
 import { CameraControls, PerspectiveCamera } from '@react-three/drei'
 import { Level, Sudo, Camera, Cactus, Box } from '@/components/torusKnot3D'
 import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 
+
 const Home = () => {
-    const [ mounted, setMounted ] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -16,8 +16,9 @@ const Home = () => {
 
     if (!mounted) return null;
 
+
     return (
-        <div className="w-full h-screen grid justify-items-center -z-5 absolute top-0">
+        <div className="w-full grid justify-items-center -z-5 absolute top-0 h-screen">
             <motion.div
                 className='w-full'
                 initial={{ 

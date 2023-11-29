@@ -1,0 +1,17 @@
+.base {
+    width: calc(10 * 15px);
+    height: 10px;
+    background-color: hsl(191, 18%, 81%);
+}
+
+.piece {
+    position: fixed;
+    top: calc(50vh - 185px);
+    left: calc(50vw - 75px);
+}
+
+.oGrid {
+    position: relative;
+    /* width: calc(10 * 15px);
+    height: calc(12 * 15px); */
+}

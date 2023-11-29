@@ -65,9 +65,9 @@ const themeSwitch: React.FC<themeSwitchProps> = ({for_class}) => {
                 staggerChildren: 0.1,
                 // delay: 0,
             },
-            backgroundColor: "#1A202C",
+            backgroundColor: "#1e1b4bCC",
         },
-        light: { backgroundColor: "#76A5FF" },
+        light: { backgroundColor: "#c026d3CC" },
     };
 
     const childVariants: Variants = {
@@ -149,7 +149,7 @@ const themeSwitch: React.FC<themeSwitchProps> = ({for_class}) => {
                     }}
                 >
                     <motion.div
-                        className="btn"
+                        className="btn shadow-inner"
                         variants={containerVariants}
                         initial={colorMode === "dark" ? "light" : "dark"}
                         exit={colorMode === "dark" ? "light" : "dark"}
