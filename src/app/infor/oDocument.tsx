@@ -3,25 +3,35 @@ import { motion } from 'framer-motion'
 import { Button } from '@nextui-org/button';
 import useDownloader from "react-use-downloader";
 
+import SDownload from '@/svgs/download';
+import SScroll from '@/svgs/scroll';
+
 interface oDocumentProps {
-    theme: String;
+    theme: string;
 }
 
-const fDocuments = [
-    {
-        url: "/CV-VN.pdf",
-        name: "CV - Phan Duy Tân.pdf"
-    }, {
-        url: "/CV-EN.pdf",
-        name: "CV - Phan Duy Tan.pdf"
-    }, {
-        url: "/AT-VN.pdf",
-        name: "AT - Phan Duy Tân.pdf"
-    }, {
-        url: "/AT-EN.pdf",
-        name: "AT - Phan Duy Tan.pdf"
-    },
-]
+const fDocuments = {
+    cv: [
+        {
+            url: "/CV-VN.pdf",
+            name: "Curriculum Vitae - VN.pdf"
+        }, {
+            url: "/CV-EN.pdf",
+            name: "Curriculum Vitae - EN.pdf"
+        }
+    ],
+    at: [
+        {
+            url: "/AT-VN.pdf",
+            name: "Academic Transcript - VN.pdf"
+        }, 
+        , {
+            url: "/AT-EN.pdf",
+            name: "Academic Transcript - EN.pdf"
+        },
+    ]
+}
+
 
 // File
 import logoDark from "@/images/logos/logo-dark.ico";
@@ -68,27 +78,67 @@ const oDocument: React.FC<oDocumentProps> = ({ theme }) => {
                                 scale: 0.8
                             }}
                         ></motion.img>
-                <b>Documents</b>
-                {fDocuments.map((item, index) => {
-                    return (
-                        <div key={index}>
-                            <Button onClick={() => download(item.url, item.name)} isDisabled={isInProgress}
-                                    className="bg-indigo-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
-                                    <path fill="#8ce7f2" d="M37.5,39.5H40c4.1,0,7.5-3.4,7.5-7.5s-3.4-7.5-7.5-7.5h-1.5V24c0-5.8-4.7-10.5-10.5-10.5S17.5,18.2,17.5,24v0.5	H16c-4.1,0-7.5,3.4-7.5,7.5s3.4,7.5,7.5,7.5h2.1H37.5z"></path>
-                                    <path fill="none" stroke="#18193f" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="3" d="M32.4,13.8c-1.9-2.6-5-4.3-8.4-4.3c-5.8,0-10.5,4.7-10.5,10.5v0.5H12c-4.1,0-7.5,3.4-7.5,7.5s3.4,7.5,7.5,7.5	h2.1"></path>
-                                    <path fill="none" stroke="#18193f" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="3" d="M33.5,35.5H36c4.1,0,7.5-3.4,7.5-7.5s-3.4-7.5-7.5-7.5h-1.5"></path>
-                                    <polyline fill="none" stroke="#18193f" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="3" points="28.5,35.8 24,40.3 19.5,35.8"></polyline>
-                                    <line x1="24" x2="24" y1="25.3" y2="40.3" fill="none" stroke="#18193f" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="3"></line>
-                                </svg>
-                                <label>{ item.name }</label>
-                            </Button>
-                            {error && <p>possible error {JSON.stringify(error)}</p>} 
-                        </div>
-                    )
-                })
-                        }
                     </div>
+                <h2 className='ml-3'>Documents</h2>
+                <section className='mt-0 ml-3'>
+                    <div>
+                        <ol className="relative border-s border-gray-500 dark:border-gray-200">
+                            <li className="mb-7 ms-4">
+                                <div className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-1.5 border border-gray-500 dark:border-gray-500 dark:bg-gray-400"></div>
+                                <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">Curriculum Vitae</time>
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">This is my Curriculum Vitae</h3>
+                                <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Summary of some basic information about myself. There are English and Vietnamese versions, you can download them for more information about me. Thanks for looking.</p>
+                                <div className='grid grid-flow-row gap-1'>
+                                    {
+                                        fDocuments.cv.map((item, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <Button onClick={() => download(item.url, item.name)} isDisabled={isInProgress}
+                                                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+                                                        <label>{item.name}</label>
+                                                        <SDownload stokeLogo={theme}></SDownload>
+                                                    </Button>
+                                                    {error && <p>possible error {JSON.stringify(error)}</p>} 
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </li>
+                            <li className="mb-7 ms-4">
+                                <div className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-1.5 border border-gray-500 dark:border-gray-500 dark:bg-gray-400"></div>
+                                <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">Academic Transcript</time>
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">University Of Economics Ho Chi Minh City</h3>
+                                <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Summary of scores from my studies at Ho Chi Minh City University of Economics and authentic QR code from the school, including English and Vietnamese versions.</p>
+                                <div className='grid grid-flow-row gap-1'>
+                                    {
+                                        fDocuments.at.map((item, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <Button onClick={() => download(item.url, item.name)} isDisabled={isInProgress}
+                                                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+                                                        <label>{item.name}</label>
+                                                        <SDownload stokeLogo={theme}></SDownload>
+                                                    </Button>
+                                                    {error && <p>possible error {JSON.stringify(error)}</p>} 
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </li>
+                            <li className="ms-4">
+                                <div className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-1.5 border border-gray-500 dark:border-gray-500 dark:bg-gray-400"></div>
+                                <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2024</time>
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Graduation in University Of Economics Ho Chi Minh City</h3>
+                                <p className="text-base font-normal text-gray-500 dark:text-gray-400">I will officially receive my diploma and update it here soon after.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+
+
                 </motion.div>
     );
 }

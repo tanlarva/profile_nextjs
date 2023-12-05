@@ -18,38 +18,40 @@ const Home = () => {
 
 
     return (
-        <div className="w-full grid justify-items-center -z-5 absolute top-0 h-screen">
-            <motion.div
-                className='w-full'
-                initial={{ 
-                    translateY:200
-                }}
-                animate={{
-                    translateY: 0
-                }}
-                transition={{ 
-                    type: 'spring',
-                    duration: 0.5,
-                    bounce: 0.1,
-                    stiffness: 100,
-                    damping: 10,
-                    delay: 0.15
-                }}
-            >
-                <Canvas>
-                    <CameraControls minPolarAngle={0} maxPolarAngle={Math.PI / 1.6} />
-                    <ambientLight intensity={Math.PI / 2} />
-                    <group scale={4} position={[-5, -5, -5]}>
-                        <Level />
-                        <Sudo />
-                        <Camera />
-                        <Cactus />
-                        <Box position={[-0.8, 1.4, 0.4]} scale={0.15} />
-                    </group>
-                    <PerspectiveCamera makeDefault position={[10, 5, 10]} />
-                </Canvas>
-            </motion.div>
-        </div>
+        <section>
+            <div className="w-full grid justify-items-center -z-5 absolute top-0 h-screen">
+                <motion.div
+                    className='w-full'
+                    initial={{ 
+                        translateY:200
+                    }}
+                    animate={{
+                        translateY: 0
+                    }}
+                    transition={{ 
+                        type: 'spring',
+                        duration: 0.5,
+                        bounce: 0.1,
+                        stiffness: 100,
+                        damping: 10,
+                        delay: 0.15
+                    }}
+                >
+                    <Canvas>
+                        <CameraControls minPolarAngle={0} maxPolarAngle={Math.PI / 1.6} />
+                        <ambientLight intensity={Math.PI / 2} />
+                        <group scale={4} position={[-5, -5, -5]}>
+                            <Level />
+                            <Sudo />
+                            <Camera />
+                            <Cactus />
+                            <Box position={[-0.8, 1.4, 0.4]} scale={0.15} />
+                        </group>
+                        <PerspectiveCamera makeDefault position={[10, 5, 10]} />
+                    </Canvas>
+                </motion.div>
+            </div>
+        </section>
     );
 }
 

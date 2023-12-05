@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
-import InUEH from "./inUeh"
+import InUEH from "@/app/works/oUeh"
 import TextScroll from "@/components/textScroll/textScroll"
 import { useTheme } from "next-themes"
 

@@ -1,20 +1,23 @@
+'use client'
 import { montserrat } from './fonts';
 import './globals.css'
 import dynamic from 'next/dynamic';
 import { Providers } from './providers';
 import Loading from './loading';
 import { Suspense } from 'react';
+import { usePathname } from 'next/navigation'; 
 
 const Navbar = dynamic(() => import('@/components/navbar'), {ssr: false})
 const Larva = dynamic(() => import('@/components/larva'), { ssr: false })
 const Footer = dynamic(() => import('@/components/footer'), {ssr: false})
-const ThemeSwitcher = dynamic(() => import('@/components/themeSwitcher'), {ssr: false})
+const ThemeSwitcher = dynamic(() => import('@/components/themeSwitcher'), { ssr: false })
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+const cssFixInHome = 'absolute w-3/5 bottom-0 z-[100]'
+
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
+    
+    const route = usePathname()
+    
     return (
         <html lang="en" className={montserrat.className}>
             <body className="relative overflow-x-hidden min-w-screen min-h-screen
@@ -28,13 +31,13 @@ export default function RootLayout({
                         </div>
                         <Navbar for_class='w-3/5'/>
                     </main>
-                    <main>
-                        <Suspense fallback={<Loading/>}>
+                    <Suspense fallback={<Loading />}>
+                        <main className=''>
                             {children}
-                        </Suspense>
-                    </main>
+                        </main>
+                    </Suspense>
                     <main className='grid justify-items-center'>
-                        <div className='w-3/5 absolute bottom-0'>
+                        <div className={ route === '/' ? cssFixInHome : 'w-3/5 z-[100]' }>
                             <Footer />
                         </div>
                     </main>

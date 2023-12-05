@@ -36,7 +36,7 @@ const Larva: React.FC<LarvaProps> = ({for_class}) => {
                 <div className="flex flex-col gap-2 justify-center text-gray-900 dark:text-gray-200">
                     <h2 className="mb-0 font-bold">Tân Larva</h2>
                     <p className="mb-0 font-semibold leading-none">
-                        Hello, I'm full-stack Developer from VietNam
+                        Hello, I'm full-stack Developer from VietNam ️🎉
                     </p>
                 </div>
             </section>

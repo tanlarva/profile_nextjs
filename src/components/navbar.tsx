@@ -18,16 +18,19 @@ const navItems = [
     }, {
         path: '/history',
         name: 'History',
+    }, {
+        path: '/reference',
+        name: 'Reference'
     }
 ]
 
 interface NavbarProps {
-    for_class: string;
+    for_class: String;
 }
 
 const Navbar: React.FC<NavbarProps> = ({for_class}) =>{
     let pathname = usePathname() || "/";
-    const classes = for_class ? for_class : 'w-full';
+    const classes = for_class != undefined ? for_class : 'w-full';
 
     const [hoveredPath, setHoveredPath] = useState(pathname);
 
