@@ -25,7 +25,7 @@ const navItems = [
 ]
 
 interface NavbarProps {
-    for_class: String;
+    for_class: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({for_class}) =>{

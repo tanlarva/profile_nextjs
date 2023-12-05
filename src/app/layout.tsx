@@ -12,7 +12,7 @@ const Larva = dynamic(() => import('@/components/larva'), { ssr: false })
 const Footer = dynamic(() => import('@/components/footer'), {ssr: false})
 const ThemeSwitcher = dynamic(() => import('@/components/themeSwitcher'), { ssr: false })
 
-const cssFixInHome = 'absolute w-3/5 bottom-0 z-[100]'
+const cssFixInHome = 'w-3/5 bottom-0 z-[100] absolute'
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     
