@@ -1,71 +1,93 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
-
-import InUEH from "@/app/works/oUeh"
-import TextScroll from "@/components/textScroll/textScroll"
-import { useTheme } from "next-themes"
-
 const Works = () => {
-    const [ mounted, setMounted ] = useState(false)
-    const { theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) return null
     return (
-        <div className="w-full min-h-screen">
-            <InUEH theme={theme != undefined ? theme : 'dark'}></InUEH>
-            <section className="py-5">
-                <TextScroll></TextScroll>
-            </section>
-                        <div className="grid justify-items-center">
-                <section className="w-3/5 grid grid-cols-5 gap-4">
-                    <motion.div
-                        className="col-span-2 h-10 bg-cyan-600/25 rounded-lg"
-                        initial={{
-                            opacity: 0,
-                            translateX: -200
-                        }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        animate={{ 
-                            translateX: 0
-                        }}
-                        transition={{ 
-                            type: "spring",
-                            bounce: 0.25,
-                            stiffness: 130,
-                            damping: 9,
-                            duration: 0.3,
-                        }}
-                    >1</motion.div>
-                    <motion.div
-                        className="col-span-3 h-10 bg-purple-600/25 rounded-lg"
-                        initial={{
-                            opacity: 0,
-                            translateX: 800
-                        }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        animate={{ 
-                            translateX: 0
-                        }}
-                        transition={{ 
-                            type: "spring",
-                            bounce: 0.25,
-                            stiffness: 130,
-                            damping: 9,
-                            duration: 0.3,
-                        }}
-                    >1.2</motion.div>
-                </section>
+        <div className="">
+            <div className="flex flex-col md:flex-row justify-center">
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">C</h1>
+                    <h1 className="relative font-semibold text-8xl">C</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">O</h1>
+                    <h1 className="relative font-semibold text-8xl">O</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">M</h1>
+                    <h1 className="relative font-semibold text-8xl">M</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">I</h1>
+                    <h1 className="relative font-semibold text-8xl">I</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">N</h1>
+                    <h1 className="relative font-semibold text-8xl">N</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">G</h1>
+                    <h1 className="relative font-semibold text-8xl">G</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl"> - </h1>
+                    <h1 className="relative font-semibold text-8xl"> - </h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">S</h1>
+                    <h1 className="relative font-semibold text-8xl">S</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">O</h1>
+                    <h1 className="relative font-semibold text-8xl">O</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">O</h1>
+                    <h1 className="relative font-semibold text-8xl">O</h1>
+                </div>
+                <div className="relative">
+                    <h1 className="absolute inset-0 transition-transform translate-x-1 translate-y-1 
+                                    text-fuchsia-500 dark:text-cyan-400 group-hover:translate-y-0
+                                    group-hover:translate-x-0 font-semibold text-8xl">N</h1>
+                    <h1 className="relative font-semibold text-8xl">N</h1>
+                </div>
+
+            </div>
+            <div className="flex justify-center mt-5">
+                <a className="relative inline-block text-sm font-medium
+                                text-fuchsia-600 dark:text-cyan-400 group
+                                active:text-fuchsia-400 dark:active:text-cyan-200
+                                focus:outline-none focus:ring"
+                    href="www.jiyu-ani.com"
+                    target="_blank"
+                >
+                    <span className="absolute inset-0 transition-transform translate-x-1 translate-y-1 bg-fuchsia-500 dark:bg-cyan-400 group-hover:translate-y-0 group-hover:translate-x-0 rounded-lg"></span>
+                    <span className="relative block px-8 py-3 bg-fuchsia-100 dark:bg-cyan-950 border border-current rounded-lg">
+                        In Here
+                    </span>
+                </a>
             </div>
         </div>
-    )
+    );
 }
 
-export default Works
+export default Works;

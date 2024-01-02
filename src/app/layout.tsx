@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import { montserrat } from './fonts';
 import './globals.css'
 import dynamic from 'next/dynamic';
@@ -12,7 +13,7 @@ const Larva = dynamic(() => import('@/components/larva'), { ssr: false })
 const Footer = dynamic(() => import('@/components/footer'), {ssr: false})
 const ThemeSwitcher = dynamic(() => import('@/components/themeSwitcher'), { ssr: false })
 
-const cssFixInHome = 'w-3/5 bottom-0 z-[100] absolute'
+const cssFixInHome = 'w-full px-4 md:px-0 md:w-4/5 xl:w-3/5 bottom-0 z-[100] absolute'
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     
@@ -25,19 +26,19 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                                 dark:from-cyan-950 dark:from-1% dark:via-neutral-950 dark:via-60% dark:to-fuchsia-950 dark:to-1%">
                 <Providers>
                     <main className='grid justify-items-center'>
-                        <div className='p-5 py-5 w-3/5 flex flex-row z-[100]'>
+                        <div className='p-5 py-5 w-full md:w-4/5 xl:w-3/5 flex flex-row z-[100]'>
                             <Larva for_class='basis-3/4' />
                             <ThemeSwitcher for_class='basis-1/4 grid justify-items-end'/>
                         </div>
-                        <Navbar for_class='w-3/5'/>
+                        <Navbar for_class='w-full px-4 md:w-4/5 xl:w-3/5 md:px-0'/>
                     </main>
-                    <Suspense fallback={<Loading />}>
+                    <Suspense fallback={ <Loading /> }>
                         <main className=''>
-                            {children}
+                            { children }
                         </main>
                     </Suspense>
                     <main className='grid justify-items-center'>
-                        <div className={ route === '/' ? cssFixInHome : 'w-3/5 z-[100]' }>
+                        <div className={ route === '/' ? cssFixInHome : 'w-full px-4 md:px-0 md:w-4/5 xl:w-3/5 z-[100]' }>
                             <Footer />
                         </div>
                     </main>

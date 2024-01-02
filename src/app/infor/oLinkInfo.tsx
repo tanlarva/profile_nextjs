@@ -7,6 +7,7 @@ import STwitter from '@/svgs/twitter';
 
 interface oLinkInForProps {
     theme: string;
+    for_class: string;
 }
 
 const information = {
@@ -16,13 +17,11 @@ const information = {
     freelancer: "https://freelancer.com/tanlarva"
 }
 
-const oLinkInFor: React.FC<oLinkInForProps> = ({ theme }) => {
+const oLinkInFor: React.FC<oLinkInForProps> = ({ theme, for_class }) => {
     const strokeLogo = theme === "light" ? true: false
     return (
         <motion.div
-            className="lg:col-span-2
-                        border border-stone-200/90 dark:border-stone-700/90 p-[0.4rem] rounded-lg
-                        bg-stone-100/20 backdrop-blur-md w-full"
+            className={ for_class }
             initial={{ 
                 opacity: 0,
                 translateY: 200
@@ -39,8 +38,7 @@ const oLinkInFor: React.FC<oLinkInForProps> = ({ theme }) => {
                 damping: 9,
             }}
         >
-            <div className="flex md:flex-row p-3
-                            sm:flex-col">
+            <div className="flex flex-row lg:flex-col justify-between gap-3">
                 <SGithub link={information['github']} theme={theme} for_class='flex flex-row'></SGithub>
                 <SLinkedIn link={information['linkedin']} theme={theme} for_class='flex flex-row'></SLinkedIn>
                 <STwitter link={information['twitter']} theme={theme} for_class='flex flex-row'></STwitter>

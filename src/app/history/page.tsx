@@ -1,18 +1,71 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+
+import InUEH from "@/app/history/oUeh"
+import TextScroll from "@/components/textScroll/textScroll"
+import { useTheme } from "next-themes"
 
 const History = () => {
+    const [ mounted, setMounted ] = useState(false)
+    const { theme, setTheme } = useTheme()
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
     return (
-        <section className="w-full grid justify-items-center">
-            <div className="w-3/5">
-                <ol className="relative border-s border-gray-500 dark:border-gray-200">
-                    <li className="ms-4">
-                        <div className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-1.5 border border-gray-500 dark:border-gray-500 dark:bg-gray-400"></div>
-                        <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2022</time>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>
-                        <p className="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
-                    </li>
-                </ol>
+        <section className="w-full">
+            <div className="grid justify-items-center w-full">
+                <InUEH theme={theme != undefined ? theme : 'dark'}></InUEH>
             </div>
-            
+            <div className="py-5">
+                <TextScroll></TextScroll>
+            </div>
+            {/* <div className="grid justify-items-center">
+                <section className="w-3/5 grid grid-cols-5 gap-4">
+                    <motion.div
+                        className="col-span-2 h-10 bg-cyan-600/25 rounded-lg"
+                        initial={{
+                            opacity: 0,
+                            translateX: -200
+                        }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        animate={{ 
+                            translateX: 0
+                        }}
+                        transition={{ 
+                            type: "spring",
+                            bounce: 0.25,
+                            stiffness: 130,
+                            damping: 9,
+                            duration: 0.3,
+                        }}
+                    >1</motion.div>
+                    <motion.div
+                        className="col-span-3 h-10 bg-purple-600/25 rounded-lg"
+                        initial={{
+                            opacity: 0,
+                            translateX: 800
+                        }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        animate={{ 
+                            translateX: 0
+                        }}
+                        transition={{ 
+                            type: "spring",
+                            bounce: 0.25,
+                            stiffness: 130,
+                            damping: 9,
+                            duration: 0.3,
+                        }}
+                    >1.2</motion.div>
+                </section>
+            </div> */}
         </section>
     )
 }

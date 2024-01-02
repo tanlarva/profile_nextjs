@@ -18,6 +18,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-dotted-background"), nextui()],
+  plugins: [nextui()],
 }
 

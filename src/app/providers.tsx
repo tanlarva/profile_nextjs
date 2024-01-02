@@ -11,14 +11,14 @@ export function Providers({
     children: React.ReactNode 
 }) {
     return (
-        <NextUIProvider>
-            <NextThemesProvider attribute="class" defaultTheme="light">
-                <CacheProvider>
-                    <ChakraProvider>
-                        {children}
-                    </ChakraProvider>
-                </CacheProvider>
-            </NextThemesProvider>
-        </NextUIProvider>
+            <NextUIProvider>
+                <NextThemesProvider attribute="class" defaultTheme="light">
+                    <CacheProvider>
+                        <ChakraProvider>
+                            {children}
+                        </ChakraProvider>
+                    </CacheProvider>
+                </NextThemesProvider>
+            </NextUIProvider>
     )
 }

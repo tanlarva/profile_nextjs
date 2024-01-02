@@ -14,12 +14,11 @@ const Larva: React.FC<LarvaProps> = ({for_class}) => {
 
     return (
         <div className={ classes }>
-            <section className="w-full flex gap-4 justify-start mb-6 p-2">
-                <div>
+            <section className="w-full min-w-screen flex gap-4 justify-start mb-3 p-2">
+                <div className="h-auto w-full md:w-20 rounded-full overflow-hidden shadow-md dark:shadow-cyan-700/50 bg-transparent">
                     <motion.img
+                        className="w-full h-full object-cover"
                         src={Avatar.src}
-                        width={100}
-                        height={100}
                         alt="This is Tân Larva"
                         initial={{ opacity:0 }}
                         animate={{ opacity:1 }}

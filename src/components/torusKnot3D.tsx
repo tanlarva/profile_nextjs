@@ -6,14 +6,14 @@ import { useSpring, a } from '@react-spring/three'
 import { Mesh, BufferGeometry, NormalBufferAttributes, Material, Object3DEventMap } from 'three'
 
 export function Level() {
-    const { scene } = useGLTF('/level-react-draco.glb')
+    const { scene } = useGLTF('/static/glb/level-react-draco.glb')
     const levelNode = scene.getObjectByName('Level')
     if (!(levelNode instanceof Mesh)) return null
     return <mesh geometry={levelNode.geometry} material={levelNode.material} position={[-0.38, 0.69, 0.62]} rotation={[Math.PI / 2, -Math.PI / 9, 0]} />
 }
 
 export function Sudo() {
-    const { scene } = useGLTF('/level-react-draco.glb')
+    const { scene } = useGLTF('/static/glb/level-react-draco.glb')
     const levelSudo = scene.getObjectByName('Sudo')
     const levelSudoHead = scene.getObjectByName('SudoHead')
     const [spring, api] = useSpring(() => ({ rotation: [Math.PI / 2, 0, 0.29], config: { friction: 40 } }), [])
@@ -39,7 +39,7 @@ export function Sudo() {
 
 export function Camera() {
     // const { nodes, materials } = useGLTF('/level-react-draco.glb')
-    const { scene } = useGLTF('/level-react-draco.glb')
+    const { scene } = useGLTF('/static/glb/level-react-draco.glb')
     const levelCamera = scene.getObjectByName('Camera')
     const levelCamera_1 = scene.getObjectByName('Camera_1')
     const levelLens = scene.getObjectByName('Lens')
@@ -68,7 +68,7 @@ export function Camera() {
 
 export function Cactus() {
     // const { nodes, materials } = useGLTF('/level-react-draco.glb')
-    const { scene } = useGLTF('/level-react-draco.glb')
+    const { scene } = useGLTF('/static/glb/level-react-draco.glb')
     const levelCactus = scene.getObjectByName('Cactus')
 
     if (!(levelCactus instanceof Mesh)) return null;
