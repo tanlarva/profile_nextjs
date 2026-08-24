@@ -16,7 +16,7 @@
     "@motionone/utils": "^10.16.3",
     "@nextui-org/react": "^2.2.9",
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.88.17",
+    "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^8.15.11",
     "@splinetool/loader": "^0.9.497",
     "@splinetool/r3f-spline": "^1.0.2",
@@ -30,7 +30,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use-downloader": "^1.2.4",
-    "three": "^0.158.0"
+    "three": "^0.185.1",
+    "three-mesh-bvh": "^0.9.14"
   },
   "devDependencies": {
     "@types/node": "^20",
